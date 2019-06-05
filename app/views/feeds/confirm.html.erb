@@ -1,0 +1,16 @@
+
+<h1>確認</h1>
+<%= form_with(model: @feed ,url: feeds_path, local:true) do |form|%>
+<%= form.hidden_field :title %>
+<%= form.hidden_field:content %>
+
+<%= @feed.title %>
+<%= @feed.content %>
+<%= form.submit "投稿" %>
+<% end %>
+
+<%= form_with(model: @feed ,url: new_feed_path, local:true,method: 'get') do |form|%>
+<%= form.hidden_field :title %>
+<%= form.hidden_field:content %>
+<%= form.submit "戻る", name: 'back' %>
+<% end %>

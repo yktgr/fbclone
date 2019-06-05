@@ -6,7 +6,7 @@ class FeedsController < ApplicationController
 
   def new
     if params[:back]
-    @feed = Feed.new(feed_params,params[:user_id])
+    @feed = Feed.new(feed_params)
   else
     @feed = Feed.new
   end
@@ -36,6 +36,11 @@ class FeedsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def confirm
+  @feed =  current_user.feeds.build(feed_params)
+  render 'new' if @feed.invalid?
   end
 
   def destroy

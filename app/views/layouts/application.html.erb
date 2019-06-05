@@ -13,11 +13,10 @@
     <%= content_tag(:div,value,class:"#{key}") %>
     <% end %>
     <% if logged_in? %>
-      <%= link_to current_user.name, user_path(current_user.id) %>
       <%= link_to "Home", feeds_path %>
       <%= link_to "New", new_feed_path %>
       <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-
+      <%= current_user.name %>
     <% else %>
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>

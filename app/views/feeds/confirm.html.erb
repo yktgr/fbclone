@@ -6,11 +6,14 @@
 
 <%= @feed.title %>
 <%= @feed.content %>
+<%= image_tag(@feed.picture.url) if @feed.picture && @feed.picture.url %>
+<%= form.hidden_field :picture_cache %>
 <%= form.submit "投稿" %>
 <% end %>
 
 <%= form_with(model: @feed ,url: new_feed_path, local:true,method: 'get') do |form|%>
 <%= form.hidden_field :title %>
 <%= form.hidden_field:content %>
+<%= form.hidden_field:picture_cach %>
 <%= form.submit "戻る", name: 'back' %>
 <% end %>

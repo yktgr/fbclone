@@ -4,6 +4,7 @@
 <tr>
 <td><%= feed.title %></td>
 <td><%= feed.content %></td>
+<td><%= image_tag(feed.picture.url) if feed.picture && feed.picture.url %></td>
 <td><%= User.find_by(id: feed.user_id).name %>
 <td><%= link_to '詳細',feed_path(feed.id) %></td>
 <td><%= link_to '編集する',edit_feed_path(feed.id)  %></td>

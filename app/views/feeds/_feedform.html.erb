@@ -6,5 +6,13 @@
 <%= form.label :content %>
 <%= form.text_field :content %>
 
+<%= image_tag(@feed.picture.url) if @feed.picture && @feed.picture.url %>
+<%= form.label :picture %>
+<%= form.file_field :picture %>
+<%= form.hidden_field :picture_cache %>
+
+
+
+
 <%= form.submit "投稿"%>
 <% end %>

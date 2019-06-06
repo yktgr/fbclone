@@ -5,7 +5,7 @@ class FeedsController < ApplicationController
   end
 
   def new
-    if params[:back]
+  if params[:back]
     @feed = Feed.new(feed_params)
   else
     @feed = Feed.new

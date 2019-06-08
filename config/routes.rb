@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "feeds_path"
+  root to: '#feeds'
   resources :feeds do
     collection do
       post :confirm

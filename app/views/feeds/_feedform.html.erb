@@ -1,18 +1,20 @@
-<%= form_with(model: @feed,local: true, url: new_or_edit ) do |form| %>
 
+<div class="col-md-offset-4 col-md-4">
+<%= form_with(model: @feed,local: true, url: new_or_edit ) do |form| %>
+<div>
 <%= form.label :title %>
 <%= form.text_field :title %>
-
-<%= form.label :content %>
-<%= form.text_field :content %>
-
+</div>
+<div>
 <%= image_tag(@feed.picture.url) if @feed.picture && @feed.picture.url %>
 <%= form.label :picture %>
 <%= form.file_field :picture %>
 <%= form.hidden_field :picture_cache %>
-
-
-
-
+</div>
+<div>
+<%= form.label :content %>
+<%= form.text_field :content %>
+</div>
 <%= form.submit "投稿"%>
 <% end %>
+</div>

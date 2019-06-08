@@ -1,14 +1,18 @@
-<h1>feed</h1>
+
+<div class="col-md-offset-4 col-md-4">
+<div class = "content">
 <% @feeds.each do |feed| %>
-<table>
-<tr>
-<td><%= feed.title %></td>
-<td><%= feed.content %></td>
-<td><%= image_tag(feed.picture.url) if feed.picture && feed.picture.url %></td>
-<td><%= User.find_by(id: feed.user_id).name %>
-<td><%= link_to '詳細',feed_path(feed.id) %></td>
-<td><%= link_to '編集する',edit_feed_path(feed.id)  %></td>
-<td><%= link_to '削除する',feed_path(feed.id) ,method: :delete %></td>
-</tr>
-</table>
+  <div id = "content_name"><%= User.find_by(id: feed.user_id).name %></div>
+  <div><%= feed.created_at.strftime("%Y-%m-%d %H:%M") %></div>
+  <div id = "content_area"><%= feed.content %>  </div>
+  <div class="img-thumbnail"><%= image_tag(feed.picture.url) if feed.picture && feed.picture.url %></div>
+
+  <div id = "content_edit">
+    <%= link_to '詳細',feed_path(feed.id) %>
+    <%= link_to '編集する',edit_feed_path(feed.id) %>
+    <%= link_to '削除する',feed_path(feed.id) ,method: :delete %>
+  </div>
+
 <% end %>
+</div>
+</div>

@@ -1,3 +1,29 @@
 // Place all the styles related to the feeds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#content_area{
+  height: 10rem;
+  background-color: #ffff;
+}
+
+#content_name{
+  font-weight: bold;
+  color:#3366cc;
+  margin-top: 2rem;
+}
+
+#content_edit a{
+  color:#444444;
+  list-style: none;
+}
+
+.content{
+  font-size: 1.2rem;
+  color:#444444;
+  position: absolute;
+  margin: auto;
+  top: 5rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

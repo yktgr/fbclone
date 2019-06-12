@@ -17,6 +17,7 @@
 
 html{
   font-size: 10px;
+  width: 100%;
 }
 
 body{
@@ -44,6 +45,7 @@ body{
  .header a{
    color:#ffff;
  }
+
 
  #navi{
    float:right;

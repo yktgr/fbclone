@@ -1,4 +1,10 @@
 <h1>詳細</h1>
-<%= @feed.title %>
-<%= @feed.content %>
+<div class = "row">
+<div class = "offset-md-4 col-md-4">
+<div class = "content">
+<div>タイトル：<%= @feed.title %></div>
+<div>内容：<%= @feed.content %></div>
 <%= image_tag(@feed.picture_url) if @feed.picture && @feed.picture.url %>
+</div>
+</div>
+</div>

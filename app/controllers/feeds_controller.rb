@@ -5,11 +5,11 @@ class FeedsController < ApplicationController
   end
 
   def new
-  if params[:back]
+   if params[:back]
     @feed = Feed.new(feed_params)
-  else
+   else
     @feed = Feed.new
-  end
+   end
   end
 
   def create
@@ -32,15 +32,15 @@ class FeedsController < ApplicationController
 
   def update
     if @feed.update(feed_params)
-    redirect_to feeds_path, notice: "投稿編集しました"
+     redirect_to feeds_path, notice: "投稿編集しました"
     else
-      render 'edit'
+     render 'edit'
     end
   end
 
   def confirm
-  @feed =  current_user.feeds.build(feed_params)
-  render 'new' if @feed.invalid?
+    @feed =  current_user.feeds.build(feed_params)
+    render 'new' if @feed.invalid?
   end
 
   def destroy
@@ -52,6 +52,7 @@ class FeedsController < ApplicationController
   def feed_params
   params.require(:feed).permit(:title,:content,:picture,:picture_cache)
   end
+
   def set_feed
   @feed = Feed.find(params[:id])
   end
